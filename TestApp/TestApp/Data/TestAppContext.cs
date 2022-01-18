@@ -16,6 +16,15 @@ namespace TestApp.Data
         {
         }
 
+        // new TestAppContext() で使用したい場合はこのメソッドをオーバーライドして書かないといけない
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    // appsettings.jsonを読み込む
+        //    var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+        //    // DB接続
+        //    optionsBuilder.UseSqlServer(configuration.GetConnectionString("TestAppContext"));
+        //}
+
         // DBのMoviesというテーブルと接続（この場合、MovieViewModelはMoviesテーブルの各カラムの型を定義している）
         public DbSet<TestApp.Models.MovieViewModel> Movies { get; set; }
     }

@@ -5,7 +5,7 @@ using TestApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// DIの設定をここでしている
+// DIの設定をここでしている(テスト時と本番動作ではDBを使い分けるため、DBインスタンスをDIでパラメータ化することは効率的)
 // ここでサービス登録をしていない場合、シードデータが投入されない動作をする
 builder.Services.AddDbContext<TestAppContext>(options =>
     options.UseSqlServer(

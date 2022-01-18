@@ -17,6 +17,10 @@ namespace TestApp.Controllers
 
         public MoviesController(TestAppContext context)
         {
+            // DI でインスタンス化しない場合は以下の記述が必要
+            //var options = new DbContextOptions<TestAppContext>();
+            //var context = new TestAppContext(options);
+
             // DBをインスタンス化しているようなもの(ヤンマー見積システムでいうと"h_mitumori"をインスタンス化)
             _context = context;
         }
